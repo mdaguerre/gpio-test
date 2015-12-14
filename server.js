@@ -5,6 +5,11 @@ var board = new five.Board({
 });
 
 board.on("ready", function() {
-  var led = new five.Led("P1-13");
-  led.blink();
+  var led1 = new five.Led("P1-11");
+  var led2 = new five.Led("P1-13");
+  var led3 = new five.Led("P1-15");
+  
+  led1.blink();
+  led2.blink();
+  led3.blink();
 });
