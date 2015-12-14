@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/mdaguerre/gpio-test/issues"
   },
-  "homepage": "https://github.com/mdaguerre/gpio-test#readme"
+  "homepage": "https://github.com/mdaguerre/gpio-test#readme",
+  "dependencies": {
+    "johnny-five": "^0.9.14",
+    "raspi-io": "^5.1.0"
+  }
 }
