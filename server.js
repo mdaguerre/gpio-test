@@ -53,6 +53,8 @@ app.get('/:action/:pin', function(req, res) {
 
   var pin = pins[pin_number];
 
+  console.log(pin, action)
+
   var r = new five.Led(pin);
 
   switch (action) {
@@ -63,7 +65,7 @@ app.get('/:action/:pin', function(req, res) {
       r.off();
       break;
   }
-  
+
   res.send('All PINS are ' + action);
 
 });
