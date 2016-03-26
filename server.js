@@ -55,7 +55,7 @@ app.get('/:action/:pin', function(req, res) {
 
   if(pin == undefined){
     console.log('PIN not valid: ' + pin_number);
-    res.send('PIN not valid: ' + pin_number);
+    res.send('PIN not valid: ' + pin_number).end();
   }
 
   console.log(pin, action)
@@ -71,7 +71,7 @@ app.get('/:action/:pin', function(req, res) {
       break;
   }
 
-  res.send('All PINS are ' + action);
+  res.send('All PINS are ' + action).end();
 
 });
 
