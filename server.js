@@ -8,6 +8,9 @@ var board = new five.Board({
 });
 
 app.get('/', function (req, res) {
+   var led1 = new five.Led("P1-17");
+  
+  led1.blink();
   res.send('Hello World!');
 });
 
@@ -19,11 +22,5 @@ var server = app.listen(3000, function () {
 });
 
 board.on("ready", function() {
-  var led1 = new five.Led("P1-11");
-  var led2 = new five.Led("P1-13");
-  var led3 = new five.Led("P1-15");
-  
-  led1.blink();
-  led2.blink();
-  led3.blink();
+ 
 });
