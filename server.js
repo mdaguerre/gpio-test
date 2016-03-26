@@ -53,6 +53,11 @@ app.get('/:action/:pin', function(req, res) {
 
   var pin = pins[pin_number];
 
+  if(pin == undefined){
+    console.log('PIN not valid: ' + pin_number);
+    res.send('PIN not valid: ' + pin_number);
+  }
+
   console.log(pin, action)
 
   var r = new five.Led(pin);
