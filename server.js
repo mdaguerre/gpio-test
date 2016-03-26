@@ -50,7 +50,7 @@ app.get('/all/:action', function(req, res) {
 app.get('/:action/:pin', function(req, res) {
   var action = req.params.action;
   var pin_number = req.params.pin;
-  
+
   var pin = pins[pin_number];
 
   var r = new five.Led(pin);
@@ -63,11 +63,8 @@ app.get('/:action/:pin', function(req, res) {
       r.off();
       break;
   }
-
-
+  
   res.send('All PINS are ' + action);
-
-}
 
 });
 
