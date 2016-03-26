@@ -22,10 +22,7 @@ var board = new five.Board({
 });
 
 app.get('/', function(req, res) {
-  var led1 = new five.Led("P1-11");
 
-  led1.off();
-  res.send('Hello World!');
 });
 
 app.get('/all/:action', function(req, res) {
@@ -47,8 +44,6 @@ app.get('/all/:action', function(req, res) {
   }
 
   res.send('All PINS are ' + action);
-
-}
 
 });
 
