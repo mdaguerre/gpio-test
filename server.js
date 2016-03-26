@@ -49,28 +49,25 @@ app.get('/all/:action', function(req, res) {
 
 app.get('/:action/:pin', function(req, res) {
   var action = req.params.action;
+  var pin_number = req.params.pin;
+  
+  var pin = pins[pin_number];
 
-  for (var i in relays) {
-    var relay = relays[i];
+  var r = new five.Led(pin);
 
-    for (var j in relay) {
-      var pin = relay[j];
-      var r = new five.Led(pin);
-
-      switch (action) {
-        case 'on':
-          r.on();
-          break;
-        case 'off':
-          r.off();
-          break;
-      }
-
-    }
-
-    res.send('All PINS are ' + action);
-
+  switch (action) {
+    case 'on':
+      r.on();
+      break;
+    case 'off':
+      r.off();
+      break;
   }
+
+
+  res.send('All PINS are ' + action);
+
+}
 
 });
 
