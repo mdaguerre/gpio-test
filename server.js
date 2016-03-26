@@ -8,7 +8,7 @@ var board = new five.Board({
 });
 
 app.get('/', function (req, res) {
-   var led1 = new five.Led("P1-17");
+   var led1 = new five.Led("GPIO18");
   
   led1.blink();
   res.send('Hello World!');
